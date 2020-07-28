@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  watch: true,
+  watch: false,
   entry: './src/js/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),

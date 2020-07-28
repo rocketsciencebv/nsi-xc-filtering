@@ -1,0 +1,202 @@
+@import './variables';
+@import './mixins/fonts';
+@import './anchors';
+@import './fonts';
+
+.nsi-section-disruptionfilter {
+  .jq_gridcontentarea {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .wm-field {
+      border-radius: 1.75rem;
+      height: 50px;
+      padding-bottom: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .wm-field.nsi-button.nsi-button__yellow {
+      background-color: transparent;
+
+      input {
+        background-color: #0063d3;
+        border-radius: 1.75rem;
+        box-shadow: none;
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        height: 50px;
+        width: 100% !important;
+        line-height: 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    .wm-field:not(.nsi-button):not(.nsi-button__yellow) {
+      background-color: $nsi-white;
+      display: flex;
+      flex-flow: row nowrap;
+      margin-bottom: 1rem !important;
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+
+      .wm-field-label {
+        border-right: 2px solid #e6e6e8;
+        flex: 0 1 auto;
+        margin: 0 !important;
+
+        label {
+          display: block;
+          height: 50px;
+          position: relative;
+          text-indent: -9999999px;
+          width: 44px;
+          &::before {
+            background-color: transparent;
+            background-repeat: no-repeat;
+            content: '';
+            display: block;
+            position: absolute;
+          }
+
+          &[for='wmformfragment_date']::before {
+            background-image: url('../img/calender-grey.svg');
+            height: 19px;
+            width: 19px;
+            left: 0px;
+            top: 15px;
+          }
+
+          &[for='wmformfragment_carrier']::before {
+            background-image: url('../img/intercity-1-grey.svg');
+            height: 24px;
+            width: 17px;
+            left: 2px;
+            top: 13px;
+          }
+        }
+      }
+
+      .wm-field-input {
+        flex: 1 1 auto;
+        width: auto !important;
+        min-width: auto !important;
+
+        > div:not(.nsi-input-drowdown) {
+          background-color: transparent;
+          position: relative;
+
+          #wmformfragment_date_date_placeholder {
+            background-color: #ffffff;
+            color: #0063d3;
+            font-weight: bold;
+            height: 50px;
+            left: 0;
+            line-height: 1.5rem;
+            padding: 14px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+          }
+        }
+
+        .nsi-input-drowdown {
+          padding-left: 0.875rem;
+          position: relative;
+
+          &::before {
+            background-color: #ffffff;
+            background-image: url('../img/chevron-down-blue.svg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            box-sizing: content-box;
+            content: '';
+            display: block;
+            width: 11px;
+            height: 8px;
+            pointer-events: all;
+            padding: 2px 1px;
+            position: absolute;
+            top: 18px;
+            right: 0.875rem;
+            z-index: 100;
+          }
+        }
+
+        #wmformfragment_date_date,
+        #wmformfragment_carrier {
+          font-size: 1rem;
+          line-height: 1.5rem;
+          font-weight: bold;
+          color: #0063d3;
+        }
+
+        #wmformfragment_date {
+          width: 2px !important;
+        }
+        #wmformfragment_date_date {
+          background-color: transparent;
+          border: 0;
+          height: 50px;
+          -webkit-appearance: none;
+          margin: 0 !important;
+          position: relative;
+          width: auto !important;
+
+          &::-webkit-inner-spin-button,
+          &::-webkit-calendar-picker-indicator {
+            display: none;
+            -webkit-appearance: none;
+          }
+        }
+
+        #wmformfragment_carrier {
+          background-color: transparent;
+          border: 0;
+          height: 50px;
+          padding-left: 0 !important;
+          -o-appearance: none;
+          -ms-appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      flex-direction: row;
+
+      #date {
+        width: 199px;
+        @-moz-document url-prefix() {
+          width: auto !important;
+        }
+      }
+      #carrier,
+      #filter {
+        margin-left: 1.5rem;
+      }
+      #carrier {
+        width: 271px;
+        .wm-field-input {
+          min-width: auto !important;
+        }
+      }
+      #filter {
+        width: 160px;
+        .nsi-button {
+          min-width: 100% !important;
+        }
+      }
+
+      #wmformfragment_date_date_placeholder {
+        width: 107px !important;
+        @-moz-document url-prefix() {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

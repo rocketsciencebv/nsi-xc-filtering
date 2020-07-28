@@ -1,0 +1,18 @@
+.hero {
+  height: 14.375rem;
+  margin-bottom: -5.625rem;
+  overflow: hidden;
+  position: relative;
+
+  @media screen and (min-width: 640px) {
+    height: 23.125rem;
+    margin-bottom: -2.5rem;
+  }
+
+  &--transparent {
+    height: auto;
+    margin-bottom: -2rem;
+    padding-top: 4.375rem;
+    position: relative;
+  }
+}

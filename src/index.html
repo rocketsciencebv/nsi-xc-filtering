@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Rocket Science B.V.">
+  <title>NSi filtering</title>
+</head>
+
+<body id="page-top">
+  <header class="header">main menu</header>
+
+  <div class="content">
+
+    <div class="container container--section">
+      <div class="hero hero--transparent">
+        <div class="tile__header">
+          <div>
+            <header class="headingGroup">
+              <div>
+                <div class="breadcrumbs"> <a href="/nl/reisinformatie" title="Reisinformatie">Reisinformatie</a> / Actuele reisinformatie</div>
+                <h1 class="headingXL" id="de_actuele_reisinformatie_op_het_internationale_spoor">De actuele reisinformatie op het internationale spoor</h1>
+                <p></p>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="nsi-style">
+        <form action="https://www.dev.aws.nsinternational.nl/web/wcbservlet/nl.gx.forms.wmpformengine.servlet" id="wmform_1031671" class="wmpform" method="post" enctype="multipart/form-data">
+          <fieldset class="displayNone">
+            <input type="hidden" name="precondition_show" id="precondition_1031671_show" value="">
+            <input type="hidden" name="precondition_hide" id="precondition_1031671_hide" value="">
+            <input type="hidden" name="formid" value="1031671">
+            <input type="hidden" name="clientsideRouting" value="false">
+            <input type="hidden" name="wmformid" value="1E85BA7B-A7DB-4CA7-AA3E-AC4D00132FC2">
+            <input type="hidden" name="wmstepid" value="wmstep_1">
+            <input type="hidden" name="wmlocale" value="nl_NL">
+            <input type="hidden" name="langid" value="43">
+            <input type="hidden" name="csfw" class="csfw" value="https://www.dev.aws.nsinternational.nl/web/show?id=100162&amp;langid=43&amp;contenttype=js&amp;elementHolder=995252&amp;elementId=1031671&amp;formversion=1E85BA7B-A7DB-4CA7-AA3E-AC4D00132FC2&amp;ssiObjectClassName=nl.gx.webmanager.cms.element.Element&amp;ssiObjectId=1031671&amp;tsobjectid=329&amp;presentationid=90658">
+            <input type="hidden" name="csfw_versionId" class="csfw_versionId" value="1E85BA7B-A7DB-4CA7-AA3E-AC4D00132FC2">
+            <input type="hidden" name="csfw_stepId" class="csfw_stepId" value="">
+            <input type="hidden" name="csfw_requestedChannel" value="">
+          </fieldset>
+
+          <div class="gridelement formsectioncompound gridelement_style nsi-section-disruptionfilter" id="wmfragment_4">
+            <div class="jq_gridcontentarea" uniqueid="wmfragment_4">
+              <div class="wm-field contentelement wm_form_element contentelement_style" id="date">
+                <div class="wm-field-label">
+                  <!-- FIXME: for-tag from `wmformfragment_date` to `wmformfragment_date_date` -->
+                  <label id="text_date" for="wmformfragment_date">Reisdatum:</label>
+                </div>
+                <div class="wm-field-input">
+                  <div>
+                    <input type="text" tabindex="-1" class="nsi-hidden nsi-hidden__inaccessible" name="date" id="wmformfragment_date" value="2020-07-27" data-fragment-tag="">
+                    <input type="date" class="nsi-input-date" name="date" id="wmformfragment_date_date" min="2020-07-27" onchange="FormsUtil.nsi_copyValue('date_date','date')" value="2020-07-27" placeholder="yyyy-mm-dd">
+                  </div>
+                  <script type="text/javascript">
+                    /**
+                     * Constants
+                     */
+                    var DATE_ID = 'date';
+                    var FIELD_INPUT = 'wm-field-input';
+                    var DATE_PLACEHOLDER = {
+                      EN: 'Today',
+                      NL: 'Vandaag'
+                    };
+                    var LANG = window.location.href.includes('nsinternational.com/en') || window.location.href.includes('?lang=en')  ? 'EN' : 'NL';
+
+                    /**
+                     * Retrieve the children from the date field
+                     */
+                    var dateField = document.getElementById(DATE_ID);
+                    var children = dateField.childNodes;
+                    var fieldElement = null;
+
+                    /**
+                     * Retrieve the field element with the `wm-field-input` class
+                     */
+                    for (var i = 0; i < children.length; i++) {
+                      if (children[i].classList && children[i].classList.contains(FIELD_INPUT)) {
+                        fieldElement = children[i];
+                        break;
+                      }
+                    }
+
+                    if (!fieldElement) {
+                      console.error('Can\'t set placeholder since there is no `.wm-field-input`-element for `#date`-element');
+                    }
+
+                    /**
+                     * When the designated fieldElement exists create the placeholder and
+                     * onClick handler
+                     */
+                    if (fieldElement) {
+                      var fieldElementChildren = fieldElement.children;
+
+                      // Create a new div for the placeholder and place it inside
+                      var node = document.createElement("DIV");
+                      node.setAttribute('id', 'wmformfragment_date_date_placeholder');
+                      var textnode = document.createTextNode(DATE_PLACEHOLDER[LANG]);
+                      node.appendChild(textnode);
+
+                      /**
+                       * Unfortunately the markup of the `wm-field-input` consist
+                       * of a div with no class or id. The following code will select
+                       * it (if found)
+                       */
+                      for (var i = 0; i < fieldElementChildren.length; i++) {
+                        if (fieldElementChildren[i].nodeName && fieldElementChildren[i].nodeName === 'DIV' && !fieldElementChildren[i].classList.length) {
+                          fieldInnerElement = fieldElementChildren[i];
+                          break;
+                        }
+                      }
+
+                      if (!fieldInnerElement) {
+                        console.error('Can\'t set placeholder since there is no div-element (without a class or id) inside the `.wm-field-input`-element for `#date`-element');
+                      }
+
+                      if (fieldInnerElement) {
+                        // add the placeholder to the inner div element
+                        fieldInnerElement.appendChild(node);
+
+                        node.onclick = function(e) {
+                          // cleanup/remove listener after click
+                          node.onclick = null;
+
+                          // remove the complete element
+                          this.remove();
+                        };
+                      }
+                    }
+                  </script>
+                </div>
+              </div>
+
+              <div class="wm-field contentelement wm_form_element contentelement_style" id="carrier">
+                <div class="wm-field-label">
+                  <label id="text_carrier" for="wmformfragment_carrier">Vervoerder:</label>
+                </div>
+                <div class="wm-field-input">
+                  <div class="nsi-input-drowdown">
+                    <select class="wm-field-list wm-field-dropdown" name="carrier" id="wmformfragment_carrier" data-fragment-tag="">
+                      <option value="ALL">Alle vervoerders</option>
+                      <option value="ICBRU">IC Brussel</option>
+                      <option value="THALYS">Thalys</option>
+                      <option value="ICE">ICE</option>
+                      <option value="ICBER">IC Berlijn</option>
+                      <option value="EURO">Eurostar</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wm-field contentelement wm_form_element contentelement_style nsi-button nsi-button__yellow " id="filter">
+                <input type="submit" class="nsi-button nsi-button__yellow" name="filter" value="Filter" data-fragment-tag="" />
+              </div>
+            </div>
+            <input type="hidden" name="swfrmsig" value="fdd5a034b363a21e59827fdcc8f67b1dcbf3cc9e0d6280c91f09f0e52f539a687b8db3ba4c535001da6a2cee37e45943ea84ec2e690bcd14827916801854dd93a1da0d80cbc2a556470a116f98111745a32c6386d6a297d64b4928ce78b41407273a9194750af76cc95582be358a9be8e8f9099facb7e47c6bfbaaee4f8b5e76d73a61635b79ca81f549e57843f4cd7e2b7646a062874587c0cc29739c83af796bb38c118a6661907ba5e563fee5c7f7af2602d781f0cc219aa766756ea241d77cc4280a4a4f238ee9bff805eab9dc39a1cdab31ab4d5b8e8b39be33251e842781bfffa2090d40898d5110cb2347d1768af033ef560ba81cd2969704ff8ff84bed36ceabbe547f44|445aa77afc2ca8c2ca1f12caa80a648d0bcac96e900a1593b5e8886069ea9f60" />
+          </form>
+      </div>
+    </div>
+
+    <div class="container container--section">
+      <grid class="container"></grid>
+    </div>
+  </div>
+</body>
+</html>
